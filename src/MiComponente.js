@@ -5,7 +5,22 @@ import React from "react";
 const MiComponente = () => {
 
     return (
-        <p>Este es mi primer componente</p>
+        <>
+            <hr />
+            <h2>Componente creado</h2>
+            <p>Este es mi primer componente</p>
+            <ul>
+                <li>
+                    React
+                </li>
+                <li>
+                    Angular
+                </li>
+                <li>
+                    Vue
+                </li>
+            </ul>
+        </>
     )
 }
 
