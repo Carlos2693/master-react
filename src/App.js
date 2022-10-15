@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import MiComponente from './MiComponente';
 
 function App() {
   return (
@@ -9,6 +10,9 @@ function App() {
         <p>
           Bienvenido al aprendizaje en react!!!
         </p>
+
+        {/* Cargar mi primer componente */}
+        <MiComponente />
       </header>
     </div>
   );
