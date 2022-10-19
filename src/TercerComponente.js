@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 // {nombre, apellidos, ficha}, desestructuracion de variable recibida
-export const TercerComponente = ({nombre, apellidos, ficha}) => {
+export const TercerComponente = ({ nombre, apellidos, ficha }) => {
 
   return (
     <div>
@@ -25,4 +25,9 @@ TercerComponente.propTypes = {
   nombre: PropTypes.string.isRequired,
   apellidos: PropTypes.string.isRequired,
   ficha: PropTypes.object
+}
+
+TercerComponente.defaultProps = {
+  nombre: "Vanessa",
+  apellidos: "Hernandez"
 }
