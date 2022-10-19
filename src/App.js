@@ -2,8 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 import MiComponente from './MiComponente';
 import { SegundoComponente } from './SegundoComponente';
+import { TercerComponente } from './TercerComponente';
 
 function App() {
+
+  const ficha_medica = {
+    altura: "184cm",
+    grupo: "O+",
+    estado: "Bueno",
+    alergias: "Ninguna"
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -14,6 +23,11 @@ function App() {
 
         {/* Cargar mi primer componente */}
         <div className='components'>
+          <hr />
+          <TercerComponente
+            nombre="Carlos"
+            apellidos="Buruel"
+            ficha={ficha_medica}/>
           <hr />
           <SegundoComponente />
           <hr />
