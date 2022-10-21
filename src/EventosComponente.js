@@ -6,6 +6,10 @@ export const EventosComponente = () => {
         alert("Has dado click al botón!! " + nombre)
     }
 
+    function hasDadoDobleClick(e) {
+       alert('Has dado doble click!!!')
+    }
+
   return (
     <div>
         <h1>Eventos en React</h1>
@@ -17,9 +21,14 @@ export const EventosComponente = () => {
             console.log("I'm click event")
         }}>Push it!</button>
         */}
-        <button onClick={ e => hasDadoClick(e, "Carlos") }>Dame click!</button>
+        <p>
+          <button onClick={ e => hasDadoClick(e, "Carlos") }>Dame click!</button>
+        </p>
 
-
+        <p>
+        <button onDoubleClick={ hasDadoDobleClick }>Dame click!</button>  
+        </p>
+        
     </div>
   )
 }
