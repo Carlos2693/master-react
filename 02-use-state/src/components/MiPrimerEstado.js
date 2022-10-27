@@ -1,23 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export const MiPrimerEstado = () => {
 
+    /*
+    Problematica
     let nombre = "Carlos Buruel"
 
     const cambiarNombre = e => {
         nombre = "Vanessa Hernandez"
     }
+    */
 
-  return (
-    <div>
+    const [nombre, setNombre] = useState("Carlos Buruel")
 
-        <h3>Componente MiPrimerEstado</h3>
-        <strong>
-            {nombre}
-        </strong>
-        &nbsp;
-        <button onClick={ cambiarNombre }>Cambiar</button>
-        
-    </div>
-  )
+    const cambiarNombre = e => {
+        setNombre("Vanessa Hernandez")
+    }
+
+    return (
+        <div>
+
+            <h3>Componente MiPrimerEstado</h3>
+            <strong>
+                {nombre}
+            </strong>
+            &nbsp;
+            <button onClick={cambiarNombre}>Cambiar</button>
+
+        </div>
+    )
 }
