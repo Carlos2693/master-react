@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { AvisoComponent } from './AvisoComponent'
 
 export const PruebasComponent = () => {
 
@@ -39,10 +40,12 @@ export const PruebasComponent = () => {
                     type='text'
                     onChange={changeUser}
                     placeholder='Cambiar el nombre' />
+
+                <button onClick={changeDate}>Cambiar fecha</button>
             </p>
 
-            <button onClick={changeDate}>Cambiar fecha</button>
-
+            
+            { user == "Carlos" && <AvisoComponent /> }
         </div>
     )
 }
