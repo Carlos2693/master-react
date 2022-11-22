@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 export const AjaxComponent = () => {
 
-  const [users, setUsers] = useState([])
+const [users, setUsers] = useState([])
 
 // Generic / basic
 const getStaticUsers = () => {
@@ -44,9 +44,17 @@ const getStaticUsersAjaxPromese = () => {
     )
 }
 
+const getUsersAjaxAW = async() => { 
+  const request = await fetch("https://reqres.in/api/users?page=1")
+  const {data} = await  request.json()
+  
+  setUsers(data)
+}
+
 useEffect(() => {
     // getStaticUsers()
-    getStaticUsersAjaxPromese()
+    // getStaticUsersAjaxPromese()
+    getUsersAjaxAW()
 }, [])
 
   return (
