@@ -31,8 +31,22 @@ const getStaticUsers = () => {
     ])
 }
 
+const getStaticUsersAjaxPromese = () => {
+  fetch("https://reqres.in/api/users?page=1")
+    .then(answer => answer.json())
+    .then(
+      finalAnswer => {
+        setUsers(finalAnswer.data)
+      },
+      error => {
+         console.log(error);
+      }
+    )
+}
+
 useEffect(() => {
-    getStaticUsers()
+    // getStaticUsers()
+    getStaticUsersAjaxPromese()
 }, [])
 
   return (
