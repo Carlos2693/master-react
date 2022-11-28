@@ -25,6 +25,26 @@ export const Crear = () => {
     }
 
     setMovie(_movie)
+
+    saveOnStorage(_movie )
+  }
+
+  const saveOnStorage = movie => {
+    // Get items saved on storage
+    let items = JSON.parse(localStorage.getItem('movies'))
+
+    // Check if items is a array
+    if (Array.isArray(items)) {
+      // Add into items a new item
+      items.push(movie)
+    } else {
+      // Create array with movie object
+      items = [movie]
+    }
+    localStorage.setItem('movies', JSON.stringify(items))
+
+    // Return movie saved
+    return movie
   }
 
   return (
