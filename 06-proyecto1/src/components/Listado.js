@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 
-export const Listado = () => {
+export const Listado = ({listState, setListState}) => {
 
-  const [listState, setListState] = useState([])
+  // const [listState, setListState] = useState([])
 
   useEffect(() => {
     getMovies()

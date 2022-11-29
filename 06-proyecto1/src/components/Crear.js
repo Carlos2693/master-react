@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { SaveOnStorage } from '../helpers/SaveOnStorage'
 
-export const Crear = () => {
+export const Crear = ({setListState}) => {
 
   const componentTitle = "Añadir pelicula"
   const [movie, setMovie] = useState({
@@ -26,6 +26,12 @@ export const Crear = () => {
     }
 
     setMovie(_movie)
+
+    // Update state on main list
+    setListState(items => {
+      // ... take all object
+      return [...items, _movie]
+    })
 
     SaveOnStorage("movies", _movie)
   }
