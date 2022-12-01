@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 export const Buscador = ({listState, setListState}) => {
 
   const [search, setSearch] = useState('')
+  const [notFound, setNotFound] = useState(false)
 
   const searchMovie = e => {
     setSearch(e.target.value)
@@ -14,6 +15,9 @@ export const Buscador = ({listState, setListState}) => {
     console.log(filteredMovies);
     if (search.length <= 1 || filteredMovies.length <= 0) {
       filteredMovies = JSON.parse(localStorage.getItem('movies'))
+      setNotFound(true)
+    } else {
+      setNotFound(false)
     }
 
     setListState(filteredMovies)
@@ -22,6 +26,11 @@ export const Buscador = ({listState, setListState}) => {
   return (
     <div className="search">
         <h3 className="title">Buscador</h3>
+
+        {(notFound && search.length > 1) && (
+          <span className='notFound'>No se ha encontrado ninguna coincidenca</span>
+        )}
+
         <form>
             <input
               type="text"
