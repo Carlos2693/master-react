@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 
 export const Persona = () => {
 
-    const {name, last_name} = useParams()
+    let {name = "Carlos", last_name = "Buruel"} = useParams()
 
   return (
     <div>

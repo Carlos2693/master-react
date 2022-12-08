@@ -46,6 +46,8 @@ export const RouterPrincipal = () => {
           <Route path='/articulos' element={<Articulos />} />
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/persona/:name/:last_name' element={<Persona />} />
+          <Route path='/persona/:name' element={<Persona />} />
+          <Route path='/persona' element={<Persona />} />
           <Route path='*' element={<Error />} />
         </Routes>
       </section>
