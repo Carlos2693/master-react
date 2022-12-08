@@ -1,5 +1,5 @@
 import React from 'react'
-import { Routes, Route, NavLink, BrowserRouter } from 'react-router-dom'
+import { Routes, Route, NavLink, BrowserRouter, Navigate } from 'react-router-dom'
 import { Articulos } from '../components/Articulos'
 import { Contacto } from '../components/Contacto'
 import { Error } from '../components/Error'
@@ -48,6 +48,7 @@ export const RouterPrincipal = () => {
           <Route path='/persona/:name/:last_name' element={<Persona />} />
           <Route path='/persona/:name' element={<Persona />} />
           <Route path='/persona' element={<Persona />} />
+          <Route path='/redirigir' element={<Navigate to='/persona/vanne/hernandez' />} />
           <Route path='*' element={<Error />} />
         </Routes>
       </section>
